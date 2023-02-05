@@ -103,6 +103,7 @@ main > article > p{
     gap: 10px;
 }
 .main-button > button{
+    cursor: pointer;
     padding: 13px;
     background-color: var(--color3);
     font: 500 normal 1em var(--font-general);
