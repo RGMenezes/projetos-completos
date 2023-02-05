@@ -13,10 +13,10 @@
     50%{
         border-radius: 100%;
     }
-    70%{
+    80%{
         height: 8px;
     }
-    80%{
+    90%{
         height: 0px;
     }
 }
@@ -75,6 +75,7 @@ main > article{
     padding: 20px;
     margin: auto;
     background-color: var(--color4);
+    border: 1px solid var(--color3);
     border-radius: 20px;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.705);
 }
