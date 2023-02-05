@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+@keyframes business-symbol {
+    10%{
+        height: 0px;
+    }
+    20%{
+        height: 8px;
+    }
+    50%{
+        border-radius: 100%;
+    }
+    70%{
+        height: 8px;
+    }
+    80%{
+        height: 0px;
+    }
+}
+
+:root{
+    --color1: #dfe4eb;
+    --color2: #8a959a;
+    --color3: #293e47;
+    --color4: #031119;
+
+    --font-main: 'Bebas Neue', cursive;
+    --font-general: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    transition: all .3s ease;
+}
+
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 2fr 8fr 1fr;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #031119;
+    background-image: url(../image/background-mobile.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+
+header > h1{
+    font: normal normal 2em var(--font-main);
+    color: var(--color1);
+    text-shadow: 2px 2px 4px black;
+}
+
+
+
+main{
+    width: 100%;
+    padding: 10px;
+}
+
+main > article{
+    width: 300px;
+    padding: 20px;
+    margin: auto;
+    background-color: var(--color4);
+    border-radius: 20px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.705);
+}
+main > article > h1{
+    padding: 10px 0px;
+    font: 700 normal 1.3em var(--font-general);
+    color: var(--color1);
+}
+main > article > p{
+    padding: 10px 0px;
+    font: normal normal 1em var(--font-general);
+    color: var(--color1);
+}
+
+
+
+.main-button{
+    width: 100%;
+    margin: auto;
+    padding: 40px 0px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    gap: 10px;
+}
+.main-button > button{
+    padding: 10px;
+    background-color: var(--color4);
+    font: 500 normal 1em var(--font-general);
+    color: var(--color1);
+    border: 1px solid var(--color3);
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.753);
+}
+.main-button > button:active{
+    color: var(--color4);
+    background-color: var(--color2);
+    transition: all .1s ease;
+}
+
+
+
+footer{
+    padding: 10px;
+}
+footer > a{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-items: center;
+    align-items: center;
+    font: normal normal 0.8em var(--font-general);
+    color: var(--color1);
+    text-decoration: none;
+}
+footer > a:active{
+    color: var(--color2);
+    transition: all .1s ease;
+}
+
+.business-symbol{
+    width: 8px;
+    height: 8px;
+    margin: 0px 3px;
+    background-color: var(--color1);
+    animation: business-symbol 3s infinite;
+}
