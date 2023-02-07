@@ -2,22 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-@keyframes business-symbol {
-    10%{
-        height: 0px;
-    }
-    20%{
-        height: 8px;
-    }
-    50%{
-        border-radius: 100%;
-    }
-    80%{
-        height: 8px;
-    }
-    90%{
-        height: 0px;
-    }
+::-webkit-scrollbar{
+    width: 0px;
+    height: 0px;
 }
 
 :root{
@@ -41,6 +28,7 @@
 html{
     scroll-behavior: smooth;
 }
+
 
 
 
@@ -99,6 +87,9 @@ header{
 }
 
 
+
+
+
 main{
     margin: auto;
     max-width: 800px;
@@ -128,24 +119,113 @@ main > article > a{
     border-radius: 5px;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.37);
 }
+main > article > a:active{
+    background-color: var(--color2);
+    color: var(--color3);
+    transition: all .1s ease;
+}
 
 main > section{
+    overflow: hidden;
     position: relative;
     margin: 20px 0px;
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;
     justify-items: center;
-    background-color: var(--color1);
 }
-main > section::before{
-    content: "";
-    z-index: -1;
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: var(--color5);
+main > section > p{
+    padding: 15px;
+    font: 600 normal 1em var(--font-general);
+    color: var(--color1);
 }
+
+
+
+
+
+footer{
+    padding: 10px;
+}
+footer > a{
+    font: 700 normal 0.9em var(--font-general);
+    color: var(--color5);
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+footer > a:active{
+    color: var(--color2);
+    transition: all .1s ease;
+}
+
+
+
+
+
+
+/*Layout background img*/
 main > section > img{
     width: 200px;
+    transform: translate(10%);
+}
+.main-section-background-animation{
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color1);
+}
+.design-element1{
+    position: absolute;
+    top: 20px;
+    left: -150px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color4);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.507);
+    transform: rotate(-45deg);
+    animation: background-animation 20s infinite;
+}
+.design-element2{
+    position: absolute;
+    left: -150px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color5);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.507);
+    transform: rotate(-45deg);
+}
+.design-element3{
+    position: absolute;
+    top: 0px;
+    left: 90px;
+    width: 100px;
+    height: 6px;
+    background-color: var(--color1);
+    border-radius: 5px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.507);
+    transform: rotate(-45deg);
+}
+.design-element4{
+    position: absolute;
+    top: 30px;
+    left: -30px;
+    width: 100px;
+    height: 6px;
+    background-color: var(--color1);
+    border-radius: 5px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.507);
+    transform: rotate(-45deg);
+}
+.design-element5{
+    position: absolute;
+    top: 200px;
+    left: -20px;
+    width: 100px;
+    height: 6px;
+    background-color: var(--color1);
+    border-radius: 5px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.507);
+    transform: rotate(-45deg);
 }
