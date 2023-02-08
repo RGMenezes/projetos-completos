@@ -102,18 +102,20 @@ main > article > a:active{
 }
 
 main > section{
-    overflow: hidden;
     position: relative;
     margin: 20px 0px;
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
-    justify-items: center;
 }
 main > section > p{
+    position: absolute;
+    top: 50%;
+    width: 130px;
     padding: 10px;
-    font: 600 normal 0.9em var(--font-general);
+    font: 600 normal 1em var(--font-general);
     color: var(--color1);
+    transform: translate(0%, -50%);
+}
+main > section > img{
+    width: 100%;
 }
 
 
@@ -134,6 +136,3 @@ footer > a:active{
     color: var(--color2);
     transition: all .1s ease;
 }
- img{
-    display: none;
- }
