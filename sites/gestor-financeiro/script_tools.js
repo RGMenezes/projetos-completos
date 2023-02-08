@@ -40,7 +40,7 @@ function ativarMenu(){
 };
 
 
-let numeroAtualCalculadora = 0;
+let numeroAtualCalculadora = '';
 let numeroCalculoCalculadora = 0;
 let escolhaAtualCalculadora = '';
 
@@ -48,37 +48,104 @@ function calculoCalculadora(escolha, valorEscolha){
     const retorno = document.querySelector(".calculadora > p");
 
     if(escolha == 'numero'){
-        if(numeroAtualCalculadora == 0){
-            numeroAtualCalculadora = valorEscolha;
-            retorno.innerHTML = numeroAtualCalculadora;
-        }else{
-            numeroAtualCalculadora += valorEscolha;
-            retorno.innerHTML = numeroAtualCalculadora;
-        };
+        numeroAtualCalculadora += valorEscolha;
+        retorno.innerHTML = numeroAtualCalculadora;
         
 
     }else if(escolha == 'calculo'){
-        if(numeroAtualCalculadora == 0){
+        escolhaAtualCalculadora = valorEscolha;
+
+        if(numeroAtualCalculadora == ''){
             if(valorEscolha == 'subtrair'){
                 numeroAtualCalculadora = '-';
                 retorno.innerHTML = numeroAtualCalculadora;
                 escolhaAtualCalculadora = 'subtrair';
-            }else{
-
-            }
+            };
 
         } else {    
-            if(numeroAtualCalculadora === String){
+            if(typeof numeroAtualCalculadora == "string"){
                 if(numeroAtualCalculadora.includes('.') == true){
-                    numeroAtualCalculadora = parseFloat(numeroAtualCalculadora);
+                    let numeroCopia = 0;
+                    numeroCopia = parseFloat(numeroAtualCalculadora);
+                    numeroAtualCalculadora = numeroCopia;
                 }else{
-                    numeroAtualCalculadora = parseInt(numeroAtualCalculadora);
+                    let numeroCopia = 0;
+                    numeroCopia = parseInt(numeroAtualCalculadora);
+                    numeroAtualCalculadora = numeroCopia;
                 };
+            }else{
+                alert("Erro Conversão");
             };
 
             if(numeroCalculoCalculadora == 0){
 
                 if(valorEscolha == "raiz"){
+
+                    let numeroGuia1 = 0;
+                    let numeroGuia2 = 0;
+
+                    while((numeroGuia1 * numeroGuia2) < numeroAtualCalculadora){
+                        numeroGuia1++;
+                        numeroGuia2++;    
+                    };
+
+                    if((numeroGuia1 * numeroGuia2) == numeroAtualCalculadora){
+                        numeroAtualCalculadora = `${numeroGuia1}`;
+                        retorno.innerHTML = numeroAtualCalculadora;
+                        numeroGuia1 = 0;
+                        numeroGuia2 = 0;
+
+                    }else{
+                        numeroAtualCalculadora = '';
+                        retorno.innerHTML = 'A raiz não é exata!';
+                        numeroGuia1 = 0;
+                        numeroGuia2 = 0;
+                    };
+                    
+                    
+                }else{
+                    numeroCalculoCalculadora = numeroAtualCalculadora;
+                    numeroAtualCalculadora = '';
+                    retorno.innerHTML = "Calcular";
+
+                };
+
+            }else{
+                if(valorEscolha == 'somar'){
+                    numeroCalculoCalculadora += numeroAtualCalculadora;
+                    numeroAtualCalculadora = '';
+                    retorno.innerHTML = numeroCalculoCalculadora;
+                    escolhaAtualCalculadora = 'somar';
+
+                }else if(valorEscolha == 'subtrair'){
+                    numeroCalculoCalculadora -= numeroAtualCalculadora;
+                    numeroAtualCalculadora = '';
+                    retorno.innerHTML = numeroCalculoCalculadora;
+                    escolhaAtualCalculadora = 'subtrair';
+
+                }else if(valorEscolha == "multiplicar"){
+                    numeroCalculoCalculadora = numeroCalculoCalculadora * numeroAtualCalculadora;
+                    numeroAtualCalculadora = '';
+                    retorno.innerHTML = numeroCalculoCalculadora;
+                    escolhaAtualCalculadora = 'multiplicar';
+
+                }else if(valorEscolha == "dividir"){
+                    numeroCalculoCalculadora = numeroCalculoCalculadora / numeroAtualCalculadora;
+                    numeroAtualCalculadora = '';
+                    retorno.innerHTML = numeroCalculoCalculadora;
+                    escolhaAtualCalculadora = 'dividir';
+                    
+                }else if(valorEscolha == "porcentagem"){
+                    numeroCalculoCalculadora = calcularPorcentagem(numeroCalculoCalculadora, numeroAtualCalculadora);
+                    numeroAtualCalculadora = '';
+                    retorno.innerHTML = numeroCalculoCalculadora;
+                    escolhaAtualCalculadora = 'porcentagem';
+                    
+                }else if(valorEscolha == "raiz"){
+                    if(numeroAtualCalculadora + numeroCalculoCalculadora == numeroCalculoCalculadora){
+                        numeroAtualCalculadora = numeroCalculoCalculadora;
+                    };
+
                     numeroCalculoCalculadora = 0;
 
                     let numeroGuia1 = 0;
@@ -100,54 +167,7 @@ function calculoCalculadora(escolha, valorEscolha){
                         retorno.innerHTML = 'A raiz não é exata!';
                         numeroGuia1 = 0;
                         numeroGuia2 = 0;
-                    }
-                    
-                    
-                }else{
-                    numeroCalculoCalculadora = numeroAtualCalculadora;
-                    numeroAtualCalculadora = 0;
-
-                };
-
-            }else{
-                if(valorEscolha == 'somar'){
-                    if(numeroCalculoCalculadora === Number){
-                        numeroCalculoCalculadora += numeroAtualCalculadora;
-                    }else{
-                        if(numeroCalculoCalculadora.includes('.') == true){
-                            numeroCalculoCalculadora = parseFloat(numeroCalculoCalculadora);
-                        }else{
-                            numeroCalculoCalculadora = parseInt(numeroCalculoCalculadora);
-                        };
-                        numeroCalculoCalculadora += numeroAtualCalculadora;
                     };
-                    numeroAtualCalculadora = 0;
-                    retorno.innerHTML = numeroCalculoCalculadora;
-                    escolhaAtualCalculadora = 'somar';
-
-                }else if(valorEscolha == 'subtrair'){
-                    numeroCalculoCalculadora -= numeroAtualCalculadora;
-                    numeroAtualCalculadora = 0;
-                    retorno.innerHTML = numeroCalculoCalculadora;
-                    escolhaAtualCalculadora = 'subtrair';
-
-                }else if(valorEscolha == "multiplicar"){
-                    numeroCalculoCalculadora = numeroCalculoCalculadora * numeroAtualCalculadora;
-                    numeroAtualCalculadora = 0;
-                    retorno.innerHTML = numeroCalculoCalculadora;
-                    escolhaAtualCalculadora = 'multiplicar';
-
-                }else if(valorEscolha == "dividir"){
-                    numeroCalculoCalculadora = numeroCalculoCalculadora / numeroAtualCalculadora;
-                    numeroAtualCalculadora = 0;
-                    retorno.innerHTML = numeroCalculoCalculadora;
-                    escolhaAtualCalculadora = 'dividir';
-                    
-                }else if(valorEscolha == "porcentagem"){
-                    numeroCalculoCalculadora = calcularPorcentagem(numeroCalculoCalculadora, numeroAtualCalculadora);
-                    numeroAtualCalculadora = 0;
-                    retorno.innerHTML = numeroCalculoCalculadora;
-                    escolhaAtualCalculadora = 'porcentagem';
                     
                 }else{
                     alert("Cálculo não detectado!");

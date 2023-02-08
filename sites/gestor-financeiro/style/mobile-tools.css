@@ -89,6 +89,7 @@
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
 }
 .calculadora > button{
+    cursor: pointer;
     background-color: var(--color3);
     font: 800 normal 1em var(--font-general);
     color: var(--color1);
