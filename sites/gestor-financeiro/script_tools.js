@@ -1,5 +1,9 @@
 let observadorMenuLateral = false;
 
+const calcularPorcentagem = function (valorInteiro, porcentagem){
+    return (valorInteiro * porcentagem) / 100;
+};
+
 function ativarMenu(){
     const barra1 = document.querySelector(".menu-barra1");
     const barra2 = document.querySelector(".menu-barra2");
@@ -36,47 +40,118 @@ function ativarMenu(){
 };
 
 
-let numeroAtualCalculadora = '';
+let numeroAtualCalculadora = 0;
 let numeroCalculoCalculadora = 0;
+let escolhaAtualCalculadora = '';
 
 function calculoCalculadora(escolha, valorEscolha){
     const retorno = document.querySelector(".calculadora > p");
 
     if(escolha == 'numero'){
-        numeroAtualCalculadora += valorEscolha;
-        retorno.innerHTML = numeroAtualCalculadora;
+        if(numeroAtualCalculadora == 0){
+            numeroAtualCalculadora = valorEscolha;
+            retorno.innerHTML = numeroAtualCalculadora;
+        }else{
+            numeroAtualCalculadora += valorEscolha;
+            retorno.innerHTML = numeroAtualCalculadora;
+        };
+        
 
     }else if(escolha == 'calculo'){
         if(numeroAtualCalculadora == 0){
             if(valorEscolha == 'subtrair'){
-                numeroAtualCalculadora += '-';
+                numeroAtualCalculadora = '-';
                 retorno.innerHTML = numeroAtualCalculadora;
+                escolhaAtualCalculadora = 'subtrair';
             }else{
-                alert('Não detectamos nenhum número');
+
             }
 
         } else {    
-            if(numeroAtualCalculadora.includes('.') == true){
-                numeroAtualCalculadora = parseFloat(numeroAtualCalculadora);
-            }else{
-                numeroAtualCalculadora = parseInt(numeroAtualCalculadora);
+            if(numeroAtualCalculadora === String){
+                if(numeroAtualCalculadora.includes('.') == true){
+                    numeroAtualCalculadora = parseFloat(numeroAtualCalculadora);
+                }else{
+                    numeroAtualCalculadora = parseInt(numeroAtualCalculadora);
+                };
             };
 
             if(numeroCalculoCalculadora == 0){
-                numeroCalculoCalculadora = numeroAtualCalculadora;
-                numeroAtualCalculadora = '';
+
+                if(valorEscolha == "raiz"){
+                    numeroCalculoCalculadora = 0;
+
+                    let numeroGuia1 = 0;
+                    let numeroGuia2 = 0;
+
+                    while((numeroGuia1 * numeroGuia2) < numeroAtualCalculadora){
+                        numeroGuia1++;
+                        numeroGuia2++;    
+                    };
+
+                    if((numeroGuia1 * numeroGuia2) == numeroAtualCalculadora){
+                        numeroAtualCalculadora = `${numeroGuia1}`;
+                        retorno.innerHTML = numeroAtualCalculadora;
+                        numeroGuia1 = 0;
+                        numeroGuia2 = 0;
+
+                    }else{
+                        numeroAtualCalculadora = '';
+                        retorno.innerHTML = 'A raiz não é exata!';
+                        numeroGuia1 = 0;
+                        numeroGuia2 = 0;
+                    }
+                    
+                    
+                }else{
+                    numeroCalculoCalculadora = numeroAtualCalculadora;
+                    numeroAtualCalculadora = 0;
+
+                };
 
             }else{
                 if(valorEscolha == 'somar'){
-                    numeroCalculoCalculadora += numeroAtualCalculadora;
-                    numeroAtualCalculadora = '';
+                    if(numeroCalculoCalculadora === Number){
+                        numeroCalculoCalculadora += numeroAtualCalculadora;
+                    }else{
+                        if(numeroCalculoCalculadora.includes('.') == true){
+                            numeroCalculoCalculadora = parseFloat(numeroCalculoCalculadora);
+                        }else{
+                            numeroCalculoCalculadora = parseInt(numeroCalculoCalculadora);
+                        };
+                        numeroCalculoCalculadora += numeroAtualCalculadora;
+                    };
+                    numeroAtualCalculadora = 0;
                     retorno.innerHTML = numeroCalculoCalculadora;
+                    escolhaAtualCalculadora = 'somar';
 
                 }else if(valorEscolha == 'subtrair'){
                     numeroCalculoCalculadora -= numeroAtualCalculadora;
-                    numeroAtualCalculadora = '';
+                    numeroAtualCalculadora = 0;
                     retorno.innerHTML = numeroCalculoCalculadora;
-                }
+                    escolhaAtualCalculadora = 'subtrair';
+
+                }else if(valorEscolha == "multiplicar"){
+                    numeroCalculoCalculadora = numeroCalculoCalculadora * numeroAtualCalculadora;
+                    numeroAtualCalculadora = 0;
+                    retorno.innerHTML = numeroCalculoCalculadora;
+                    escolhaAtualCalculadora = 'multiplicar';
+
+                }else if(valorEscolha == "dividir"){
+                    numeroCalculoCalculadora = numeroCalculoCalculadora / numeroAtualCalculadora;
+                    numeroAtualCalculadora = 0;
+                    retorno.innerHTML = numeroCalculoCalculadora;
+                    escolhaAtualCalculadora = 'dividir';
+                    
+                }else if(valorEscolha == "porcentagem"){
+                    numeroCalculoCalculadora = calcularPorcentagem(numeroCalculoCalculadora, numeroAtualCalculadora);
+                    numeroAtualCalculadora = 0;
+                    retorno.innerHTML = numeroCalculoCalculadora;
+                    escolhaAtualCalculadora = 'porcentagem';
+                    
+                }else{
+                    alert("Cálculo não detectado!");
+                };
 
             };
         };
@@ -90,9 +165,21 @@ function calculoCalculadora(escolha, valorEscolha){
         };
     
     }else if(escolha == 'resultado'){
-        
+        if(numeroCalculoCalculadora == 0){
+            if(numeroAtualCalculadora != ''){
+                retorno.innerHTML = numeroAtualCalculadora;
+            }else{
+                retorno.innerHTML = 'Digite algum número'
+            }
+
+        }else{
+            calculoCalculadora('calculo', escolhaAtualCalculadora);
+        }
+
     }else if(escolha == 'resetar'){
         retorno.innerHTML = `Calcular`;
+        numeroAtualCalculadora = '';
+        numeroCalculoCalculadora = 0;
 
     }else{
         alert("Erro, calculo indisponivel!");
