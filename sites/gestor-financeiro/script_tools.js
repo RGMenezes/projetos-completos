@@ -5,6 +5,8 @@ function ativarMenu(){
     const barra2 = document.querySelector(".menu-barra2");
     const barra3 = document.querySelector(".menu-barra3");
 
+    const menuTools = document.querySelector(".menu-tools");
+
     if(observadorMenuLateral == false){
         observadorMenuLateral = true;
 
@@ -13,6 +15,8 @@ function ativarMenu(){
         setTimeout(function(){
             barra1.setAttribute("style", "top: 13px; transform: rotate(45deg);");
             barra3.setAttribute("style", "top: 13px; transform: rotate(-45deg);");
+
+            menuTools.style.bottom = "95px"
         }, 310);
         
     }else{
@@ -20,6 +24,8 @@ function ativarMenu(){
 
         barra1.setAttribute("style", "top: 13px; transform: rotate(0deg);");
         barra3.setAttribute("style", "top: 13px; transform: rotate(0deg);");
+
+        menuTools.style.bottom = "-95px"
 
         setTimeout(function(){
             barra1.setAttribute("style", "top: 5px;");
