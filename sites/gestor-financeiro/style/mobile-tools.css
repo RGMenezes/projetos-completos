@@ -55,13 +55,48 @@
     background-color: var(--color4);
     transition: all .1s ease;
 }
-.menu-tools > .calculadora{
+.menu-tools > .button-calculadora{
     z-index: 1;
 }
-.menu-tools > .juros-compostos{
+.menu-tools > .button-juros-compostos{
     left: calc(50% - 50px);
 }
-.menu-tools > .juros-simples{
+.menu-tools > .button-juros-simples{
     left: calc(50% - -50px);
 }
 
+
+
+
+
+.calculadora{
+    width: 300px;
+    margin: 50px auto 80px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px;
+}
+.calculadora > p{
+    width: 100%;
+    padding: 15px;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    font: 600 normal 1em var(--font-general);
+    color: var(--color5);
+    border: 2px solid var(--color5);
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+.calculadora > button{
+    background-color: var(--color3);
+    font: 800 normal 1em var(--font-general);
+    color: var(--color1);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+.calculadora > button:active{
+    background-color: var(--color2);
+    transition: all .1s ease;
+}

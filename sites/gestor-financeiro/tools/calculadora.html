@@ -12,9 +12,9 @@
 </head>
 <body>
 
-    <header id="header">
+    <header style="background: none; box-shadow: none; height: 100px;" id="header">
         <div class="header-fixo">
-            <a href="#header">Gestor Financeiro</a>
+            <a rel="prev" target="_self" hreflang="pt-br" href="../index.html">Gestor Financeiro</a>
 
             <div onclick="ativarMenu()" class="header-menu">
                 <div class="menu-barra1"></div>
@@ -27,9 +27,28 @@
     </header>
 
     <main>
-        <form action="#" autocomplete="on" method="get">
-
-        </form>
+        <div class="calculadora">
+            <p>Calcular</p>
+            <button onclick="calculoCalculadora('resetar')" style="font-weight: 600;">Resetar</button>
+            <button onclick="calculoCalculadora('calculo', 'raiz')">√</button>
+            <button onclick="calculoCalculadora('calculo', 'porcentagem')">%</button>
+            <button onclick="calculoCalculadora('calculo', 'dividir')">:</button>
+            <button onclick="calculoCalculadora('numero', '7')">7</button>
+            <button onclick="calculoCalculadora('numero', '8')">8</button>
+            <button onclick="calculoCalculadora('numero', '9')">9</button>
+            <button onclick="calculoCalculadora('calculo', 'multiplicar')">x</button>
+            <button onclick="calculoCalculadora('numero', '4')">4</button>
+            <button onclick="calculoCalculadora('numero', '5')">5</button>
+            <button onclick="calculoCalculadora('numero', '6')">6</button>
+            <button onclick="calculoCalculadora('calculo', 'subtrair')">-</button>
+            <button onclick="calculoCalculadora('numero', '1')">1</button>
+            <button onclick="calculoCalculadora('numero', '2')">2</button>
+            <button onclick="calculoCalculadora('numero', '3')">3</button>
+            <button onclick="calculoCalculadora('calculo', 'somar')" style="grid-column-start: 4; grid-column-end: 5; grid-row-start: 5; grid-row-end: 7;">+</button>
+            <button onclick="calculoCalculadora('numero', '0')">0</button>
+            <button onclick="calculoCalculadora('ponto')">.</button>
+            <button onclick="calculoCalculadora('resultado')">=</button>
+        </div>
     </main>
 
     <footer>
@@ -40,9 +59,9 @@
 
     <!--menu tools-->
     <div class="menu-tools">
-        <a rel="next" target="_blank" hreflang="pt-br" href="#" class="calculadora">Calculadora</a>
-        <a rel="next" target="_blank" hreflang="pt-br" href="#" class="juros-simples">Juros Simples</a>
-        <a rel="next" target="_blank" hreflang="pt-br" href="#" class="juros-compostos">Juros Compostos</a>
+        <a href="#header" class="button-calculadora">Calculadora</a>
+        <a rel="next" target="_blank" hreflang="pt-br" href="juros_simples.html" class="button-juros-simples">Juros Simples</a>
+        <a rel="next" target="_blank" hreflang="pt-br" href="juros_compostos.html" class="button-juros-compostos">Juros Compostos</a>
     </div>
 
     <script src="../script_tools.js"></script>
