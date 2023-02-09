@@ -74,7 +74,7 @@
     margin: 50px auto 80px auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: 1.2fr repeat(5, 1fr);
     gap: 5px;
 }
 .calculadora > p{

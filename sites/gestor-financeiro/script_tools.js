@@ -62,6 +62,32 @@ function calculoCalculadora(escolha, valorEscolha){
                 escolhaAtualCalculadora = 'subtrair';
             };
 
+            if(valorEscolha == "raiz"){
+                numeroAtualCalculadora = numeroCalculoCalculadora;
+
+                let numeroGuia1 = 0;
+                let numeroGuia2 = 0;
+
+                while((numeroGuia1 * numeroGuia2) < numeroAtualCalculadora){
+                    numeroGuia1++;
+                    numeroGuia2++;    
+                };
+
+                if((numeroGuia1 * numeroGuia2) == numeroAtualCalculadora){
+                    numeroAtualCalculadora = `${numeroGuia1}`;
+                    retorno.innerHTML = numeroAtualCalculadora;
+                    numeroGuia1 = 0;
+                    numeroGuia2 = 0;
+
+                }else{
+                    numeroAtualCalculadora = '';
+                    retorno.innerHTML = 'A raiz não é exata!';
+                    numeroGuia1 = 0;
+                    numeroGuia2 = 0;
+                };
+                    
+            };
+
         } else {    
             if(typeof numeroAtualCalculadora == "string"){
                 if(numeroAtualCalculadora.includes('.') == true){
@@ -73,8 +99,10 @@ function calculoCalculadora(escolha, valorEscolha){
                     numeroCopia = parseInt(numeroAtualCalculadora);
                     numeroAtualCalculadora = numeroCopia;
                 };
+
             }else{
                 alert("Erro Conversão");
+
             };
 
             if(numeroCalculoCalculadora == 0){
@@ -142,10 +170,6 @@ function calculoCalculadora(escolha, valorEscolha){
                     escolhaAtualCalculadora = 'porcentagem';
                     
                 }else if(valorEscolha == "raiz"){
-                    if(numeroAtualCalculadora + numeroCalculoCalculadora == numeroCalculoCalculadora){
-                        numeroAtualCalculadora = numeroCalculoCalculadora;
-                    };
-
                     numeroCalculoCalculadora = 0;
 
                     let numeroGuia1 = 0;
