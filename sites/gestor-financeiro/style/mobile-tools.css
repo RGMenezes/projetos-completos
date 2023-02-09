@@ -115,7 +115,7 @@ form{
     width: 300px;
     margin: 10px auto 100px auto;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     row-gap: 10px;
 }
 
@@ -177,4 +177,12 @@ form > input[type="submit"]{
 form > input[type="submit"]:active{
     background-color: var(--color2);
     transition: all .1s ease;
+}
+
+.output{
+    margin: 0px auto 50px auto;
+    font: 600 normal 1.1em var(--font-general);
+    color: var(--color5);
+    text-align: center;
+    line-height: 2em;
 }

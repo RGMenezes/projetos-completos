@@ -302,7 +302,7 @@ function calcularJurosSimples(escolha, valorEscolha){
 
         jurosSimples.juros = capitalInicial * (taxaJuros/100) * tempoAplicacao;
 
-        retorno.innerHTML = jurosSimples.juros;
+        retorno.innerHTML = `Total final: ${(capitalInicial + jurosSimples.juros).toFixed(2)}R$<br>Valor inicial: ${capitalInicial.toFixed(2)}R$<br>Juros: ${jurosSimples.juros.toFixed(2)}R$`;
 
     }
 };
