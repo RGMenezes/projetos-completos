@@ -229,3 +229,80 @@ function calculoCalculadora(escolha, valorEscolha){
         alert("Erro, calculo indisponivel!");
     };
 };
+
+
+let jurosSimples = {
+    taxa: 'mes',
+    tempo: 'mes',
+    juros: 0
+};
+
+function calcularJurosSimples(escolha, valorEscolha){
+
+
+    function pararSubmitForm(event){
+        event.preventDefault();
+    };
+
+    const elementoForm = document.querySelector("main > form");
+    elementoForm.addEventListener("submit", pararSubmitForm);
+
+
+
+    if(escolha == "taxa juros"){
+        const botao = document.querySelector(".taxa-juros-ano-mes");
+
+        if(valorEscolha == 'mes'){
+            botao.innerHTML = "Ano";
+            botao.setAttribute('onclick', "calcularJurosSimples('taxa juros', 'ano')");
+            jurosSimples.taxa = 'ano';
+
+        }else if(valorEscolha == 'ano'){
+            botao.innerHTML = "Mes";
+            botao.setAttribute('onclick', "calcularJurosSimples('taxa juros', 'mes')");
+            jurosSimples.taxa = 'mes';
+
+        }else{
+            alert('Erro taxa de juros');
+        };
+
+    }else if(escolha == "tempo"){
+        const botao = document.querySelector(".tempo-ano-mes");
+
+        if(valorEscolha == 'mes'){
+            botao.innerHTML = "Ano";
+            botao.setAttribute('onclick', "calcularJurosSimples('tempo', 'ano')");
+            jurosSimples.tempo = 'ano';
+
+        }else if(valorEscolha == 'ano'){
+            botao.innerHTML = "Mes";
+            botao.setAttribute('onclick', "calcularJurosSimples('tempo', 'mes')");
+            jurosSimples.tempo = 'mes';
+
+        }else{
+            alert('Erro tempo');
+        };
+
+    }else{};
+
+    if(escolha == "calculo"){
+        const capitalInicial = Number(document.querySelector("#capitalInicial").value);
+        let taxaJuros = Number(document.querySelector("#taxaJuros").value);
+        let tempoAplicacao = Number(document.querySelector("#tempoAplicacao").value);
+
+        const retorno = document.querySelector(".output");
+
+        if(jurosSimples.taxa == "ano"){
+            taxaJuros = taxaJuros / 12;
+        };
+
+        if(jurosSimples.tempo == "ano"){
+            tempoAplicacao *= 12;
+        };
+
+        jurosSimples.juros = capitalInicial * (taxaJuros/100) * tempoAplicacao;
+
+        retorno.innerHTML = jurosSimples.juros;
+
+    }
+};

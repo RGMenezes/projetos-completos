@@ -27,21 +27,38 @@
     </header>
 
     <main>
-        <div class="div-form">
+
+        <article>
+            <h1>Juros Simples</h1>
+        </article>
+
+        <form autocomplete="off">
             <div>
                 <label for="capitalInicial">R$</label>
-                <input type="number" name="capitalInicial" id="capitalInicial" placeholder="Valor inicial" autocomplete="on" min="0">
+                <input style="grid-column-start: 2; grid-column-end: 4;" type="number" name="capitalInicial" id="capitalInicial" placeholder="Valor inicial" min="0" required>
             </div>
 
             <div>
                 <label for="taxaJuros">%</label>
-                <input type="number" name="taxaJuros" id="taxaJuros" placeholder="Juros Mensal" autocomplete="on" min="0">
+                <input type="number" name="taxaJuros" id="taxaJuros" placeholder="Taxa de Juros" step="0.01" min="0" required>
+                <div onclick="calcularJurosSimples('taxa juros', 'mes')" class="taxa-juros-ano-mes">
+                    Mês
+                </div>
             </div>
 
             <div>
                 <label for="tempoAplicacao">T</label>
-                <input type="number" name="tempoAplicacao" id="tempoAplicacao" placeholder="Tempo aplicado" autocomplete="on" min="0">
+                <input type="number" name="tempoAplicacao" id="tempoAplicacao" placeholder="Tempo aplicado" min="0" required>
+                <div onclick="calcularJurosSimples('tempo', 'mes')" class="tempo-ano-mes">
+                    Mês
+                </div>
             </div>
+
+            <input type="submit" value="Calcular" onclick="calcularJurosSimples('calculo', 'calculo')">
+        </form>
+
+        <div class="output">
+            sadlflj
         </div>
     </main>
 
