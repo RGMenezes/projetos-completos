@@ -4,6 +4,16 @@ const calcularPorcentagem = function (valorInteiro, porcentagem){
     return (valorInteiro * porcentagem) / 100;
 };
 
+const calcularPotencia = function (base, expoente){
+    let copia = base;
+    
+    for(let contador = 1; contador < expoente; contador++){
+        copia = base * copia;
+    };
+    
+    return copia;
+};
+
 function ativarMenu(){
     const barra1 = document.querySelector(".menu-barra1");
     const barra2 = document.querySelector(".menu-barra2");
@@ -303,6 +313,99 @@ function calcularJurosSimples(escolha, valorEscolha){
         jurosSimples.juros = capitalInicial * (taxaJuros/100) * tempoAplicacao;
 
         retorno.innerHTML = `Total final: ${(capitalInicial + jurosSimples.juros).toFixed(2)}R$<br>Valor inicial: ${capitalInicial.toFixed(2)}R$<br>Juros: ${jurosSimples.juros.toFixed(2)}R$`;
+
+    }
+};
+
+let jurosCompostos = {
+    taxa: 'mes',
+    tempo: 'mes',
+    juros: 0
+};
+
+function calcularJurosCompostos(escolha, valorEscolha){
+
+
+    function pararSubmitForm(event){
+        event.preventDefault();
+    };
+
+    const elementoForm = document.querySelector("main > form");
+    elementoForm.addEventListener("submit", pararSubmitForm);
+
+
+
+    if(escolha == "taxa juros"){
+        const botao = document.querySelector(".taxa-juros-ano-mes");
+
+        if(valorEscolha == 'mes'){
+            botao.innerHTML = "Ano";
+            botao.setAttribute('onclick', "calcularJurosSimples('taxa juros', 'ano')");
+            jurosSimples.taxa = 'ano';
+
+        }else if(valorEscolha == 'ano'){
+            botao.innerHTML = "Mes";
+            botao.setAttribute('onclick', "calcularJurosSimples('taxa juros', 'mes')");
+            jurosSimples.taxa = 'mes';
+
+        }else{
+            alert('Erro taxa de juros');
+        };
+
+    }else if(escolha == "tempo"){
+        const botao = document.querySelector(".tempo-ano-mes");
+
+        if(valorEscolha == 'mes'){
+            botao.innerHTML = "Ano";
+            botao.setAttribute('onclick', "calcularJurosSimples('tempo', 'ano')");
+            jurosCompostos.tempo = 'ano';
+
+        }else if(valorEscolha == 'ano'){
+            botao.innerHTML = "Mes";
+            botao.setAttribute('onclick', "calcularJurosSimples('tempo', 'mes')");
+            jurosCompostos.tempo = 'mes';
+
+        }else{
+            alert('Erro tempo');
+        };
+
+    }else{};
+
+    if(escolha == "calculo"){
+        const capitalInicial = Number(document.querySelector("#capitalInicial").value);
+        const valorMensal = Number(document.querySelector("#valorMensal").value);
+        let taxaJuros = Number(document.querySelector("#taxaJuros").value);
+        let tempoAplicacao = Number(document.querySelector("#tempoAplicacao").value);
+
+        const retorno = document.querySelector(".output");
+
+        if(jurosCompostos.taxa == "ano"){
+            taxaJuros = taxaJuros / 12;
+        };
+
+        if(jurosCompostos.tempo == "ano"){
+            tempoAplicacao *= 12;
+        };
+
+        taxaJuros = 1 + (taxaJuros / 100)
+
+        if(capitalInicial > 0){
+            jurosCompostos.juros = capitalInicial * calcularPotencia(taxaJuros, tempoAplicacao);
+        
+        };
+
+        let jurosCompostosMensal = 0;
+
+        if(valorMensal > 0){
+            for(let contador = 0; contador < tempoAplicacao; contador++){
+                jurosCompostosMensal = taxaJuros * jurosCompostosMensal + valorMensal;
+            };
+            
+        };
+
+        
+
+        retorno.innerHTML = `Total final: ${( jurosCompostosMensal + jurosCompostos.juros).toFixed(2)}R$<br>Valor investido: ${(capitalInicial + (valorMensal * tempoAplicacao)).toFixed(2)}R$<br>Juros ganho: ${((jurosCompostosMensal - (valorMensal * tempoAplicacao)) + (jurosCompostos.juros - capitalInicial)).toFixed(2)}R$`;
 
     }
 };

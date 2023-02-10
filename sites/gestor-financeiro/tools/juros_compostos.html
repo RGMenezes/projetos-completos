@@ -27,7 +27,41 @@
     </header>
 
     <main>
-        <div>
+        <article>
+            <h1>Juros Compostos</h1>
+        </article>
+
+        <form autocomplete="off">
+            <div>
+                <label for="capitalInicial">R$</label>
+                <input style="grid-column-start: 2; grid-column-end: 4;" type="number" name="capitalInicial" id="capitalInicial" placeholder="Valor inicial" min="0">
+            </div>
+
+            <div>
+                <label for="valorMensal">R$</label>
+                <input style="grid-column-start: 2; grid-column-end: 4;" type="number" name="valorMensal" id="valorMensal" placeholder="Valor mensal" min="0">
+            </div>
+
+            <div>
+                <label for="taxaJuros">%</label>
+                <input type="number" name="taxaJuros" id="taxaJuros" placeholder="Taxa de Juros" step="0.01" min="0" required>
+                <div onclick="calcularJurosCompostos('taxa juros', 'mes')" class="taxa-juros-ano-mes">
+                    Mês
+                </div>
+            </div>
+
+            <div>
+                <label for="tempoAplicacao">T</label>
+                <input type="number" name="tempoAplicacao" id="tempoAplicacao" placeholder="Tempo aplicado" min="0" required>
+                <div onclick="calcularJurosCompostos('tempo', 'mes')" class="tempo-ano-mes">
+                    Mês
+                </div>
+            </div>
+
+            <input type="submit" value="Calcular" onclick="calcularJurosCompostos('calculo', 'calculo')">
+        </form>
+
+        <div class="output">
 
         </div>
     </main>
@@ -35,7 +69,6 @@
     <footer>
         <a rel="next" target="_blank" hreflang="pt-br" href="https://rgmenezes.github.io/portifolio/"><div class="business-symbol"></div><p>Rafael Menezes</p></a>
     </footer>
-
 
 
     <!--menu tools-->
