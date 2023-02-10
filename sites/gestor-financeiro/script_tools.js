@@ -30,7 +30,7 @@ function ativarMenu(){
             barra1.setAttribute("style", "top: 13px; transform: rotate(45deg);");
             barra3.setAttribute("style", "top: 13px; transform: rotate(-45deg);");
 
-            menuTools.style.bottom = "95px"
+            menuTools.style.bottom = "98px"
         }, 310);
         
     }else{

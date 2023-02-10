@@ -73,6 +73,73 @@ header{
 
 
 
+/*Menu*/
+.header-menu{
+    cursor: pointer;
+    position: relative;
+    height: 28px;
+    width: 28px;
+    justify-self: end;
+}
+.header-menu > div{
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    background-color: var(--color5);
+    border-radius: 5px;
+}
+.menu-barra1{
+    top: 5px;
+}
+.menu-barra2{
+    top: 13px;
+}
+.menu-barra3{
+    top: 21px;
+}
+
+
+
+
+.menu-tools{
+    position: fixed;
+    bottom: -98px;
+    width: 100vw;
+}
+.menu-tools > a{
+    position: absolute;
+    left: 50%;
+    width: 130px;
+    padding: 20px 0px;
+    background-color: var(--color3);
+    font: 600 normal .9em var(--font-general);
+    color: var(--color1);
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+    transform: rotate(-90deg);
+    translate: -50%;
+}
+.menu-tools > a:active{
+    background-color: var(--color4);
+    transition: all .1s ease;
+}
+.menu-tools > .button-calculadora{
+    z-index: 1;
+}
+.menu-tools > .button-juros-compostos{
+    left: calc(50% - 63px);
+}
+.menu-tools > .button-juros-simples{
+    left: calc(50% - -63px);
+}
+
+
+
+
+
 main{
     margin: auto;
     max-width: 800px;
