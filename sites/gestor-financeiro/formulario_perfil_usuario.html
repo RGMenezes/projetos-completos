@@ -106,7 +106,7 @@
                     <label for="divisaoRenda50">A metade eu pago</label>
                     <input type="radio" name="divisaoRenda" id="divisaoRenda50">
 
-                    <label for="divisaoRenda25">Ajudo com algumas coisa</label>
+                    <label for="divisaoRenda25">Ajudo com algumas coisas</label>
                     <input type="radio" name="divisaoRenda" id="divisaoRenda25">
 
                     <label for="divisaoRenda0">Apenas desfruto</label>
@@ -133,7 +133,7 @@
                     <h2>No seu momento de lazer</h2>
 
                     <label for="lazerCasa">Fico em casa</label>
-                    <input type="radio" name="lazer" id="lazerCasa">
+                    <input type="radio" name="lazer" id="lazerCasa" checked>
 
                     <label for="lazerShopping">Shopping, restaurantes, cinema</label>
                     <input type="radio" name="lazer" id="lazerShopping">
@@ -142,6 +142,71 @@
                     <input type="radio" name="lazer" id="lazerViagem">
                 </section>
             </fieldset>
+
+            <fieldset>
+                <legend>Definindo seu perfil</legend>
+
+                <section>
+                    <h2>Digamos que você irá se mudar, qual a sua escolha?</h2>
+
+                    <label for="compraAluguelAvista">Comprar uma casa avista</label>
+                    <input type="radio" name="compraAluguel" id="compraAluguelAvista" checked>
+
+                    <label for="compraAluguelFinanciada">Comprar uma casa financiada</label>
+                    <input type="radio" name="compraAluguel" id="compraAluguelFinanciada">
+
+                    <label for="compraAluguelAlugar">Alugar uma casa</label>
+                    <input type="radio" name="compraAluguel" id="compraAluguelAlugar">
+                </section>
+
+                <section>
+                    <h2>Na sua opinião, qual a duração ideal de um bom filme?</h2>
+
+                    <label for="prazoCurto">Menos de 1 hora</label>
+                    <input type="radio" name="prazo" id="prazoCurto" checked>
+
+                    <label for="prazoMedio">Entre 1 hora e 2 horas</label>
+                    <input type="radio" name="prazo" id="prazoMedio">
+
+                    <label for="prazoLongo">Acima de 2 horas</label>
+                    <input type="radio" name="prazo" id="prazoLongo">
+                </section>
+
+                <section>
+                    <h2>Qual seria sua reação se perdesse metade do seu salário atual?</h2>
+
+                    <label for="investidorNaoApto">Entraria em pânico</label>
+                    <input type="radio" name="investidor" id="investidorNaoApto" checked>
+
+                    <label for="investidorConservador">Me desesperava</label>
+                    <input type="radio" name="investidor" id="investidorConservador">
+                    
+                    <label for="investidorModerado">Me preocupava</label>
+                    <input type="radio" name="investidor" id="investidorModerado">
+
+                    <label for="investidorAgressivo">Ficaria triste</label>
+                    <input type="radio" name="investidor" id="investidorAgressivo">
+
+                    <label for="investidorWallWin">Não me importaria</label>
+                    <input type="radio" name="investidor" id="investidorWallWin">
+                </section>
+
+                <section>
+                    <h2>Como você gostaria de trabalhar?</h2>
+
+                    <label for="trabalharCarteira">Carteira assinada</label>
+                    <input type="radio" name="trabalhar" id="trabalharCarteira" checked>
+
+                    <label for="trabalharEmpreender">Trabalharia Pra mim mesmo</label>
+                    <input type="radio" name="trabalhar" id="trabalharEmpreender">
+
+                    <label for="trabalharInvestir">Investindo meu dinheiro</label>
+                    <input type="radio" name="trabalhar" id="trabalharInvestir">
+                </section>
+
+            </fieldset>
+
+            <button onclick="avançarFormulario()">Avançar</button>
         </form>
     </main>
 
