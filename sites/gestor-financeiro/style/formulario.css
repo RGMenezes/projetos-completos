@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+header{
+    height: 100px;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+}
+
+
+
+#alerta{
+    max-width: 500px;
+    padding: 10px;
+    margin: 10px auto 70px auto;
+    background-color: rgb(255, 189, 163);
+    border: 2px dashed red;
+    border-radius: 10px;
+}
+
+#alerta > h1{
+    margin: 5px 0px 10px 0px;
+    font: normal normal 2em var(--font-main);
+    color: red;
+    text-align: center;
+    text-shadow: 0px 0px 1px black;
+}
+#alerta > p {
+    font: 500 normal .95em var(--font-general);
+    text-indent: 1em;
+    text-align: justify;
+}
+#alerta button{
+    padding: 8px;
+    margin: 20px auto;
+    background-color: red;
+    font: 500 normal 1em var(--font-general);
+    color: var(--color1);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+#alerta button:active{
+    background-color: var(--color1);
+    color: red;
+    transition: all .1s ease;
+}
+
+form{
+    display: none;
+    transform: scale(0);
+}
