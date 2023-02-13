@@ -25,6 +25,9 @@
         </div>
     </header>
 
+
+
+
     <main>
         <div id="alerta">
             <h1>ALERTA</h1>
@@ -35,22 +38,115 @@
         </div>
 
 
+
+
         <form>
             <fieldset>
-                <legend>Nos diga mais sobre você.</legend>
+                <legend>Nos conte sobre você</legend>
 
-                <label for="salario">Qual o seu salário atual?</label>
-                <input type="number" name="salario" id="salario" required min="0" placeholder="Salário">
+                <section>
 
-                <label>Você tem alguma renda extra?</label>
-                <label for="rendaExtraSim">Tenho</label>
-                <input type="radio" name="rendaExtra" id="rendaExtraSim" checked>
-                <label for="rendaExtraNao">Não tenho</label>
-                <input type="radio" name="rendaExtra" id="rendaExtraNao">
+                    <h2>Qual o seu salário atual?</h2>
+                    <label for="salario">Salário:</label>
+                    <input type="number" name="salario" id="salario" required min="0" placeholder="Salário">
 
+
+                    <h2>Você tem alguma renda extra?</h2>
+                    <label for="rendaExtraSim">Tenho</label>
+                    <input type="radio" name="rendaExtra" id="rendaExtraSim" checked>
+                    <label for="rendaExtraNao">Não tenho</label>
+                    <input type="radio" name="rendaExtra" id="rendaExtraNao">
+
+                </section>
+
+                <section>
+
+                    <h2>O quanto você gasta com</h2>
+                    <label for="alimentacao">Alimentação?</label>
+                    <input type="number" name="alimentacao" id="alimentacao" required min="0" placeholder="Alimentação"><br>
+
+                    <label for="aluguel">Aluguel?</label>
+                    <input type="number" name="aluguel" id="aluguel" required min="0" placeholder="Aluguel"><br>
+
+
+                    <label for="aguaLuzInternet">Água, luz e internet?</label>
+                    <input type="number" name="aguaLuzInternet" id="aguaLuzInternet" required min="0" placeholder="Água + Luz + Internet">
+
+                </section>
+
+                <section>
+
+                    <h2>Sobre compras, você costuma?</h2>
+                    <label for="cartaoCredito">Usar cartão de crédito</label>
+                    <input type="checkbox" name="cartaoCredito" id="cartaoCredito" checked>
+                    <label for="avista">Pagar avista</label>
+                    <input type="checkbox" name="avista" id="avista" checked>
+
+                    <h2>Se você possui um financiamento ou empréstimo, qual o valor e a duração?</h2>
+                    
+                    <label for="financiamentoEmprestimoValor">Valor:</label>
+                    <input type="number" name="financiamentoEmprestimoValor" id="financiamentoEmprestimoValor" required min="0" placeholder="Valor"><br>
+
+                    <label for="financiamentoEmprestimoDuracao">Duração:</label>
+                    <input type="number" name="financiamentoEmprestimoDuracao" id="financiamentoEmprestimoDuracao" required min="0" placeholder="Duração"><br>
+
+                </section>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Mais algumas perguntas</legend>
+
+                <section>
+                    <h2>Qual a sua importância na divisão de renda da sua família?</h2>
+
+                    <label for="divisaoRenda100">Cuido de tudo</label>
+                    <input type="radio" name="divisaoRenda" id="divisaoRenda100" checked>
+
+                    <label for="divisaoRenda50">A metade eu pago</label>
+                    <input type="radio" name="divisaoRenda" id="divisaoRenda50">
+
+                    <label for="divisaoRenda25">Ajudo com algumas coisa</label>
+                    <input type="radio" name="divisaoRenda" id="divisaoRenda25">
+
+                    <label for="divisaoRenda0">Apenas desfruto</label>
+                    <input type="radio" name="divisaoRenda" id="divisaoRenda0">
+                </section>
+
+                <section>
+                    <h2>Como é o seu tempo livre?</h2>
+
+                    <label for="tempoPreciso">Preciso</label>
+                    <input type="radio" name="tempo" id="tempoPreciso" checked>
+
+                    <label for="tempoNaoTenho">Não tenho</label>
+                    <input type="radio" name="tempo" id="tempoNaoTenho">
+
+                    <label for="tempoFimSemana">Fim de semana</label>
+                    <input type="radio" name="tempo" id="tempoFimSemana">
+
+                    <label for="tempoQualquerDia">Qualquer dia</label>
+                    <input type="radio" name="tempo" id="tempoQualquerDia">
+                </section>
+
+                <section>
+                    <h2>No seu momento de lazer</h2>
+
+                    <label for="lazerCasa">Fico em casa</label>
+                    <input type="radio" name="lazer" id="lazerCasa">
+
+                    <label for="lazerShopping">Shopping, restaurantes, cinema</label>
+                    <input type="radio" name="lazer" id="lazerShopping">
+
+                    <label for="lazerViagem">Viajar</label>
+                    <input type="radio" name="lazer" id="lazerViagem">
+                </section>
             </fieldset>
         </form>
     </main>
+
+
+
 
     <footer>
         <a rel="next" target="_blank" hreflang="pt-br" href="https://rgmenezes.github.io/portifolio/"><div class="business-symbol"></div><p>Rafael Menezes</p></a>
