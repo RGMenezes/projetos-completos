@@ -47,48 +47,55 @@
                 <section>
 
                     <h2>Qual o seu salário atual?</h2>
+
                     <label for="salario">Salário:</label>
                     <input type="number" name="salario" id="salario" required min="0" placeholder="Salário">
 
 
                     <h2>Você tem alguma renda extra?</h2>
-                    <label for="rendaExtraSim">Tenho</label>
+
                     <input type="radio" name="rendaExtra" id="rendaExtraSim" checked>
-                    <label for="rendaExtraNao">Não tenho</label>
+                    <label for="rendaExtraSim">Tenho</label><br>
+
                     <input type="radio" name="rendaExtra" id="rendaExtraNao">
+                    <label for="rendaExtraNao">Não tenho</label>
 
                 </section>
 
                 <section>
 
                     <h2>O quanto você gasta com</h2>
+
                     <label for="alimentacao">Alimentação?</label>
                     <input type="number" name="alimentacao" id="alimentacao" required min="0" placeholder="Alimentação"><br>
 
                     <label for="aluguel">Aluguel?</label>
                     <input type="number" name="aluguel" id="aluguel" required min="0" placeholder="Aluguel"><br>
 
-
                     <label for="aguaLuzInternet">Água, luz e internet?</label>
-                    <input type="number" name="aguaLuzInternet" id="aguaLuzInternet" required min="0" placeholder="Água + Luz + Internet">
+                    <input type="number" name="aguaLuzInternet" id="aguaLuzInternet" required min="0" placeholder="Á + L + I">
 
                 </section>
 
                 <section>
 
                     <h2>Sobre compras, você costuma?</h2>
-                    <label for="cartaoCredito">Usar cartão de crédito</label>
+
                     <input type="checkbox" name="cartaoCredito" id="cartaoCredito" checked>
-                    <label for="avista">Pagar avista</label>
+                    <label for="cartaoCredito">Usar cartão de crédito</label><br>
+
                     <input type="checkbox" name="avista" id="avista" checked>
+                    <label for="avista">Pagar avista</label>
+
+
 
                     <h2>Se você possui um financiamento ou empréstimo, qual o valor e a duração?</h2>
-                    
+
                     <label for="financiamentoEmprestimoValor">Valor:</label>
                     <input type="number" name="financiamentoEmprestimoValor" id="financiamentoEmprestimoValor" required min="0" placeholder="Valor"><br>
 
                     <label for="financiamentoEmprestimoDuracao">Duração:</label>
-                    <input type="number" name="financiamentoEmprestimoDuracao" id="financiamentoEmprestimoDuracao" required min="0" placeholder="Duração"><br>
+                    <input type="number" name="financiamentoEmprestimoDuracao" id="financiamentoEmprestimoDuracao" required min="0" placeholder="Duração">
 
                 </section>
 
@@ -99,47 +106,47 @@
 
                 <section>
                     <h2>Qual a sua importância na divisão de renda da sua família?</h2>
-
-                    <label for="divisaoRenda100">Cuido de tudo</label>
+                    
                     <input type="radio" name="divisaoRenda" id="divisaoRenda100" checked>
-
-                    <label for="divisaoRenda50">A metade eu pago</label>
+                    <label for="divisaoRenda100">Cuido de tudo</label><br>
+                    
                     <input type="radio" name="divisaoRenda" id="divisaoRenda50">
-
-                    <label for="divisaoRenda25">Ajudo com algumas coisas</label>
+                    <label for="divisaoRenda50">A metade eu pago</label><br>
+                    
                     <input type="radio" name="divisaoRenda" id="divisaoRenda25">
-
-                    <label for="divisaoRenda0">Apenas desfruto</label>
+                    <label for="divisaoRenda25">Ajudo com algumas coisas</label><br>
+                    
                     <input type="radio" name="divisaoRenda" id="divisaoRenda0">
+                    <label for="divisaoRenda0">Apenas desfruto</label>
                 </section>
 
                 <section>
                     <h2>Como é o seu tempo livre?</h2>
-
-                    <label for="tempoPreciso">Preciso</label>
+                    
                     <input type="radio" name="tempo" id="tempoPreciso" checked>
-
-                    <label for="tempoNaoTenho">Não tenho</label>
+                    <label for="tempoPreciso">Preciso</label><br>
+                    
                     <input type="radio" name="tempo" id="tempoNaoTenho">
+                    <label for="tempoNaoTenho">Não tenho</label><br>
 
-                    <label for="tempoFimSemana">Fim de semana</label>
                     <input type="radio" name="tempo" id="tempoFimSemana">
-
-                    <label for="tempoQualquerDia">Qualquer dia</label>
+                    <label for="tempoFimSemana">Fim de semana</label><br>
+                    
                     <input type="radio" name="tempo" id="tempoQualquerDia">
+                    <label for="tempoQualquerDia">Qualquer dia</label>
                 </section>
 
                 <section>
                     <h2>No seu momento de lazer</h2>
 
-                    <label for="lazerCasa">Fico em casa</label>
                     <input type="radio" name="lazer" id="lazerCasa" checked>
-
-                    <label for="lazerShopping">Shopping, restaurantes, cinema</label>
+                    <label for="lazerCasa">Fico em casa</label><br>
+ 
                     <input type="radio" name="lazer" id="lazerShopping">
+                    <label for="lazerShopping">Shopping, restaurantes, cinema</label><br>
 
+                    <input type="radio" name="lazer" id="lazerViagem">                    
                     <label for="lazerViagem">Viajar</label>
-                    <input type="radio" name="lazer" id="lazerViagem">
                 </section>
             </fieldset>
 
@@ -149,59 +156,59 @@
                 <section>
                     <h2>Digamos que você irá se mudar, qual a sua escolha?</h2>
 
-                    <label for="compraAluguelAvista">Comprar uma casa avista</label>
                     <input type="radio" name="compraAluguel" id="compraAluguelAvista" checked>
+                    <label for="compraAluguelAvista">Comprar uma casa avista</label><br>
 
-                    <label for="compraAluguelFinanciada">Comprar uma casa financiada</label>
                     <input type="radio" name="compraAluguel" id="compraAluguelFinanciada">
-
-                    <label for="compraAluguelAlugar">Alugar uma casa</label>
+                    <label for="compraAluguelFinanciada">Comprar uma casa financiada</label><br>
+                    
                     <input type="radio" name="compraAluguel" id="compraAluguelAlugar">
+                    <label for="compraAluguelAlugar">Alugar uma casa</label>
                 </section>
 
                 <section>
                     <h2>Na sua opinião, qual a duração ideal de um bom filme?</h2>
 
-                    <label for="prazoCurto">Menos de 1 hora</label>
                     <input type="radio" name="prazo" id="prazoCurto" checked>
+                    <label for="prazoCurto">Menos de 1 hora</label><br>
 
-                    <label for="prazoMedio">Entre 1 hora e 2 horas</label>
                     <input type="radio" name="prazo" id="prazoMedio">
-
-                    <label for="prazoLongo">Acima de 2 horas</label>
+                    <label for="prazoMedio">Entre 1 hora e 2 horas</label><br>
+                    
                     <input type="radio" name="prazo" id="prazoLongo">
+                    <label for="prazoLongo">Acima de 2 horas</label>
                 </section>
 
                 <section>
                     <h2>Qual seria sua reação se perdesse metade do seu salário atual?</h2>
 
-                    <label for="investidorNaoApto">Entraria em pânico</label>
                     <input type="radio" name="investidor" id="investidorNaoApto" checked>
+                    <label for="investidorNaoApto">Entraria em pânico</label><br>
 
-                    <label for="investidorConservador">Me desesperava</label>
                     <input type="radio" name="investidor" id="investidorConservador">
-                    
-                    <label for="investidorModerado">Me preocupava</label>
+                    <label for="investidorConservador">Me desesperava</label><br>                    
+
                     <input type="radio" name="investidor" id="investidorModerado">
+                    <label for="investidorModerado">Me preocupava</label><br>
 
-                    <label for="investidorAgressivo">Ficaria triste</label>
                     <input type="radio" name="investidor" id="investidorAgressivo">
-
-                    <label for="investidorWallWin">Não me importaria</label>
+                    <label for="investidorAgressivo">Ficaria triste</label><br>
+                    
                     <input type="radio" name="investidor" id="investidorWallWin">
+                    <label for="investidorWallWin">Não me importaria</label>
                 </section>
 
                 <section>
                     <h2>Como você gostaria de trabalhar?</h2>
 
-                    <label for="trabalharCarteira">Carteira assinada</label>
                     <input type="radio" name="trabalhar" id="trabalharCarteira" checked>
+                    <label for="trabalharCarteira">Carteira assinada</label><br>
 
-                    <label for="trabalharEmpreender">Trabalharia Pra mim mesmo</label>
                     <input type="radio" name="trabalhar" id="trabalharEmpreender">
-
-                    <label for="trabalharInvestir">Investindo meu dinheiro</label>
+                    <label for="trabalharEmpreender">Trabalharia Pra mim mesmo</label><br>
+                    
                     <input type="radio" name="trabalhar" id="trabalharInvestir">
+                    <label for="trabalharInvestir">Investindo meu dinheiro</label>
                 </section>
 
             </fieldset>
