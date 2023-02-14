@@ -12,3 +12,22 @@ function aceitarAlerta(){
         310
     );
 };
+
+
+
+function gerarResultado(){
+    function pararSubmitForm(event){
+        event.preventDefault();
+    };
+
+    const elementoForm = document.querySelector("main > form");
+    elementoForm.addEventListener("submit", pararSubmitForm);
+
+
+
+    const usuario = {
+        rendaExtra: document.querySelector("input[name='rendaExtraSim']:checked").value
+    };// usar if pra checar se as duas radios são iguais
+
+    alert(usuario.rendaExtra)
+};
