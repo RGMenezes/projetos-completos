@@ -38,12 +38,22 @@ function gerarResultado(){
 
 
 
+
     usuario.salario = Number(document.querySelector("#salario").value);
 
     usuario.despesasBasicas = Number(document.querySelector("#alimentacao").value) + Number(document.querySelector("#aluguel").value) + Number(document.querySelector("#aguaLuzInternet").value);
 
     usuario.despesasExtras = Number(document.querySelector("#financiamentoEmprestimoValor").value) / Number(document.querySelector("#financiamentoEmprestimoDuracao").value);
 
-    alert(usuario.despesasExtras);
+    
+    
+
+    let fraseResultado = "";
+
+    if(document.querySelector("input[name='rendaExtra']:checked").value == "sim"){
+        
+    }else{
+        
+    }
 
 };
