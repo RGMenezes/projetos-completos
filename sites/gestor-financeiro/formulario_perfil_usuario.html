@@ -54,10 +54,10 @@
 
                     <h2>Você tem alguma renda extra?</h2>
 
-                    <input type="radio" name="rendaExtra" id="rendaExtraSim" checked>
+                    <input type="radio" name="rendaExtra" id="rendaExtraSim" value="sim" checked>
                     <label for="rendaExtraSim">Tenho</label><br>
 
-                    <input type="radio" name="rendaExtra" id="rendaExtraNao">
+                    <input type="radio" name="rendaExtra" id="rendaExtraNao" value="nao">
                     <label for="rendaExtraNao">Não tenho</label>
 
                 </section>
@@ -66,7 +66,7 @@
 
                     <h2>O quanto você gasta com</h2>
 
-                    <label for="alimentacao">Alimentação?</label>
+                    <label for="alimentacao">Alimentação e gás?</label>
                     <input type="number" name="alimentacao" id="alimentacao" required min="0" placeholder="Alimentação"><br>
 
                     <label for="aluguel">Aluguel?</label>
@@ -81,10 +81,10 @@
 
                     <h2>Sobre compras, você costuma?</h2>
 
-                    <input type="checkbox" name="cartaoCredito" id="cartaoCredito" checked>
+                    <input type="radio" name="compras" id="cartaoCredito" checked value="cartao">
                     <label for="cartaoCredito">Usar cartão de crédito</label><br>
 
-                    <input type="checkbox" name="avista" id="avista" checked>
+                    <input type="radio" name="compras" id="avista" value="avista">
                     <label for="avista">Pagar avista</label>
 
 
@@ -107,45 +107,45 @@
                 <section>
                     <h2>Qual a sua importância na divisão de renda da sua família?</h2>
                     
-                    <input type="radio" name="divisaoRenda" id="divisaoRenda100" checked>
+                    <input type="radio" name="divisaoRenda" id="divisaoRenda100" value="100" checked>
                     <label for="divisaoRenda100">Cuido de tudo</label><br>
                     
-                    <input type="radio" name="divisaoRenda" id="divisaoRenda50">
+                    <input type="radio" name="divisaoRenda" id="divisaoRenda50" value="50">
                     <label for="divisaoRenda50">A metade eu pago</label><br>
                     
-                    <input type="radio" name="divisaoRenda" id="divisaoRenda25">
+                    <input type="radio" name="divisaoRenda" id="divisaoRenda25" value="25">
                     <label for="divisaoRenda25">Ajudo com algumas coisas</label><br>
                     
-                    <input type="radio" name="divisaoRenda" id="divisaoRenda0">
+                    <input type="radio" name="divisaoRenda" id="divisaoRenda0" value="0">
                     <label for="divisaoRenda0">Apenas desfruto</label>
                 </section>
 
                 <section>
                     <h2>Como é o seu tempo livre?</h2>
                     
-                    <input type="radio" name="tempo" id="tempoPreciso" checked>
-                    <label for="tempoPreciso">Preciso</label><br>
+                    <input type="radio" name="tempo" id="tempoPreciso" value="preciso" checked>
+                    <label for="tempoPreciso">Preciso de tempo</label><br>
                     
-                    <input type="radio" name="tempo" id="tempoNaoTenho">
-                    <label for="tempoNaoTenho">Não tenho</label><br>
+                    <input type="radio" name="tempo" id="tempoNaoTenho" value="naoTenho">
+                    <label for="tempoNaoTenho">Não tenho tempo</label><br>
 
-                    <input type="radio" name="tempo" id="tempoFimSemana">
+                    <input type="radio" name="tempo" id="tempoFimSemana" value="fimSemana">
                     <label for="tempoFimSemana">Fim de semana</label><br>
                     
-                    <input type="radio" name="tempo" id="tempoQualquerDia">
+                    <input type="radio" name="tempo" id="tempoQualquerDia" value="qualquerDia">
                     <label for="tempoQualquerDia">Qualquer dia</label>
                 </section>
 
                 <section>
                     <h2>No seu momento de lazer</h2>
 
-                    <input type="radio" name="lazer" id="lazerCasa" checked>
+                    <input type="radio" name="lazer" id="lazerCasa" value="casa" checked>
                     <label for="lazerCasa">Fico em casa</label><br>
  
-                    <input type="radio" name="lazer" id="lazerShopping">
+                    <input type="radio" name="lazer" id="lazerShopping" value="shopping">
                     <label for="lazerShopping">Shopping, restaurantes, cinema</label><br>
 
-                    <input type="radio" name="lazer" id="lazerViagem">                    
+                    <input type="radio" name="lazer" id="lazerViagem" value="viagem">                    
                     <label for="lazerViagem">Viajar</label>
                 </section>
             </fieldset>
@@ -156,58 +156,58 @@
                 <section>
                     <h2>Digamos que você irá se mudar, qual a sua escolha?</h2>
 
-                    <input type="radio" name="compraAluguel" id="compraAluguelAvista" checked>
+                    <input type="radio" name="compraAluguel" id="compraAluguelAvista" value="avista" checked>
                     <label for="compraAluguelAvista">Comprar uma casa avista</label><br>
 
-                    <input type="radio" name="compraAluguel" id="compraAluguelFinanciada">
+                    <input type="radio" name="compraAluguel" id="compraAluguelFinanciada" value="financiada">
                     <label for="compraAluguelFinanciada">Comprar uma casa financiada</label><br>
                     
-                    <input type="radio" name="compraAluguel" id="compraAluguelAlugar">
+                    <input type="radio" name="compraAluguel" id="compraAluguelAlugar" value="alugar">
                     <label for="compraAluguelAlugar">Alugar uma casa</label>
                 </section>
 
                 <section>
                     <h2>Na sua opinião, qual a duração ideal de um bom filme?</h2>
 
-                    <input type="radio" name="prazo" id="prazoCurto" checked>
+                    <input type="radio" name="prazo" id="prazoCurto" value="curto" checked>
                     <label for="prazoCurto">Menos de 1 hora</label><br>
 
-                    <input type="radio" name="prazo" id="prazoMedio">
+                    <input type="radio" name="prazo" id="prazoMedio" value="medio">
                     <label for="prazoMedio">Entre 1 hora e 2 horas</label><br>
                     
-                    <input type="radio" name="prazo" id="prazoLongo">
+                    <input type="radio" name="prazo" id="prazoLongo" value="longo">
                     <label for="prazoLongo">Acima de 2 horas</label>
                 </section>
 
                 <section>
                     <h2>Qual seria sua reação se perdesse metade do seu salário atual?</h2>
 
-                    <input type="radio" name="investidor" id="investidorNaoApto" checked>
+                    <input type="radio" name="investidor" id="investidorNaoApto" value="naoApto" checked>
                     <label for="investidorNaoApto">Entraria em pânico</label><br>
 
-                    <input type="radio" name="investidor" id="investidorConservador">
+                    <input type="radio" name="investidor" id="investidorConservador" value="conservador">
                     <label for="investidorConservador">Me desesperava</label><br>                    
 
-                    <input type="radio" name="investidor" id="investidorModerado">
+                    <input type="radio" name="investidor" id="investidorModerado" value="moderado">
                     <label for="investidorModerado">Me preocupava</label><br>
 
-                    <input type="radio" name="investidor" id="investidorAgressivo">
+                    <input type="radio" name="investidor" id="investidorAgressivo" value="agressivo">
                     <label for="investidorAgressivo">Ficaria triste</label><br>
                     
-                    <input type="radio" name="investidor" id="investidorWallWin">
+                    <input type="radio" name="investidor" id="investidorWallWin" value="wallWin">
                     <label for="investidorWallWin">Não me importaria</label>
                 </section>
 
                 <section>
                     <h2>Como você gostaria de trabalhar?</h2>
 
-                    <input type="radio" name="trabalhar" id="trabalharCarteira" checked>
+                    <input type="radio" name="trabalhar" id="trabalharCarteira" value="carteira" checked>
                     <label for="trabalharCarteira">Carteira assinada</label><br>
 
-                    <input type="radio" name="trabalhar" id="trabalharEmpreender">
+                    <input type="radio" name="trabalhar" id="trabalharEmpreender" value="empreender">
                     <label for="trabalharEmpreender">Trabalharia Pra mim mesmo</label><br>
                     
-                    <input type="radio" name="trabalhar" id="trabalharInvestir">
+                    <input type="radio" name="trabalhar" id="trabalharInvestir" value="investir">
                     <label for="trabalharInvestir">Investindo meu dinheiro</label>
                 </section>
 

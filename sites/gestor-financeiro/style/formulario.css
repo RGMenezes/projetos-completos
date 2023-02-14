@@ -102,13 +102,7 @@ main > form > fieldset > section > input[type="radio"]:checked + label{
     text-decoration: line-through;
 }
 
-main > form > fieldset > section > input[type="checkbox"]{
-    display: none;
-}
-main > form > fieldset > section > input[type="checkbox"]:checked + label{
-    color: var(--color3);
-    text-decoration: line-through;
-}
+
 
 main > form button{
     cursor: pointer;

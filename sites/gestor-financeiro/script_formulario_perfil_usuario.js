@@ -15,6 +15,19 @@ function aceitarAlerta(){
 
 
 
+
+let usuario = {
+    salario: 0,
+    despesasBasicas: 0,
+    despesasExtras: 0,
+    caixa: 0,
+    investimento: 0,
+    empreender: 0,
+    lazer: 0,
+    compras: 0
+}
+
+
 function gerarResultado(){
     function pararSubmitForm(event){
         event.preventDefault();
@@ -25,9 +38,12 @@ function gerarResultado(){
 
 
 
-    const usuario = {
-        rendaExtra: document.querySelector("input[name='rendaExtraSim']:checked").value
-    };// usar if pra checar se as duas radios são iguais
+    usuario.salario = Number(document.querySelector("#salario").value);
 
-    alert(usuario.rendaExtra)
+    usuario.despesasBasicas = Number(document.querySelector("#alimentacao").value) + Number(document.querySelector("#aluguel").value) + Number(document.querySelector("#aguaLuzInternet").value);
+
+    usuario.despesasExtras = Number(document.querySelector("#financiamentoEmprestimoValor").value) / Number(document.querySelector("#financiamentoEmprestimoDuracao").value);
+
+    alert(usuario.despesasExtras);
+
 };
