@@ -51,9 +51,30 @@ function gerarResultado(){
     let fraseResultado = "";
 
     if(document.querySelector("input[name='rendaExtra']:checked").value == "sim"){
-        
+        const tempo = document.querySelector("input[name='tempo']:checked").value;
+
+        if(tempo == "preciso"){
+            fraseResultado += "";    
+        }else if(tempo == "naoTenho"){
+            fraseResultado += "";
+        }else if(tempo == "fimSemana"){
+            fraseResultado += "";
+        }else{
+            fraseResultado += "";
+        };
+
     }else{
-        
-    }
+
+        if(tempo == "preciso"){
+            fraseResultado += "";    
+        }else if(tempo == "naoTenho"){
+            fraseResultado += "";
+        }else if(tempo == "fimSemana"){
+            fraseResultado += "";
+        }else{
+            fraseResultado += "";
+        };
+
+    };
 
 };
