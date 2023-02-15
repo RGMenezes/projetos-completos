@@ -65,6 +65,16 @@ function gerarResultado(){
 
     usuario.despesasExtras = Number(document.querySelector("#financiamentoEmprestimoValor").value) / Number(document.querySelector("#financiamentoEmprestimoDuracao").value);
 
+    if(usuario.salario != usuario.salario){
+        usuario.salario = 0
+    };
+    if(usuario.despesasBasicas != usuario.despesasBasicas){
+        usuario.despesasBasicas = 0
+    };
+    if(usuario.despesasExtras != usuario.despesasExtras){
+        usuario.despesasExtras = 0
+    };
+
     
     
 
@@ -288,27 +298,53 @@ function gerarResultado(){
     let resultadoUsuario = {
         despesasBasicas: calcularInteiroPelaPorcentagem(usuario.salario, usuario.despesasBasicas),
         despesasExtras: calcularInteiroPelaPorcentagem(usuario.salario, usuario.despesasExtras),
-        caixa: calculaPorcentagem(salarioSobra, usuario.caixa),
-        investimento: calculaPorcentagem(salarioSobra, usuario.investimento),
-        empreender: calculaPorcentagem(salarioSobra, usuario.empreender),
-        lazer: calculaPorcentagem(salarioSobra, usuario.lazer),
-        compras: calculaPorcentagem(salarioSobra, usuario.compras),
+        caixa: calcularInteiroPelaPorcentagem(usuario.salario, calculaPorcentagem(salarioSobra, usuario.caixa)),
+        investimento: calcularInteiroPelaPorcentagem(usuario.salario, calculaPorcentagem(salarioSobra, usuario.investimento)),
+        empreender: calcularInteiroPelaPorcentagem(usuario.salario, calculaPorcentagem(salarioSobra, usuario.empreender)),
+        lazer: calcularInteiroPelaPorcentagem(usuario.salario, calculaPorcentagem(salarioSobra, usuario.lazer)),
+        compras: calcularInteiroPelaPorcentagem(usuario.salario, calculaPorcentagem(salarioSobra, usuario.compras))
     };
 
+    if(resultadoUsuario.despesasBasicas != resultadoUsuario.despesasBasicas){
+        resultadoUsuario.despesasBasicas = 0
+    };
+    if(resultadoUsuario.despesasExtras != resultadoUsuario.despesasExtras){
+        resultadoUsuario.despesasExtras = 0
+    };
+    if(resultadoUsuario.caixa != resultadoUsuario.caixa){
+        resultadoUsuario.caixa = 0
+    };
+    if(resultadoUsuario.investimento != resultadoUsuario.investimento){
+        resultadoUsuario.investimento = 0
+    };
+    if(resultadoUsuario.empreender != resultadoUsuario.empreender){
+        resultadoUsuario.empreender = 0
+    };
+    if(resultadoUsuario.lazer != resultadoUsuario.lazer){
+        resultadoUsuario.lazer = 0
+    };
+    if(resultadoUsuario.compras != resultadoUsuario.compras){
+        resultadoUsuario.compras = 0
+    };
 
     const graficoColunaDespesasBasicas = document.querySelector("#despesasBasicas");
-    const graficoColunaDespesasExtras = document.querySelector("#despesasBasicas");
+    const graficoColunaDespesasExtras = document.querySelector("#despesasExtras");
     const graficoColunaCaixa = document.querySelector("#caixa");
     const graficoColunaInvestimento = document.querySelector("#investimento");
     const graficoColunaEmpreender = document.querySelector("#empreender");
     const graficoColunaLazer = document.querySelector("#lazer");
     const graficoColunaCompras = document.querySelector("#compras");
 
+    const legendaGrafico = document.querySelector("#legendaGrafico");
+
     graficoColunaDespesasBasicas.style.height = `${resultadoUsuario.despesasBasicas}%`;
     graficoColunaDespesasExtras.style.height = `${resultadoUsuario.despesasExtras}%`;
-    graficoColunaCaixa.style.height = `${calcularInteiroPelaPorcentagem(usuario.salario, resultadoUsuario.caixa)}%`;
-    graficoColunaInvestimento.style.height = `${calcularInteiroPelaPorcentagem(usuario.salario, resultadoUsuario.investimento)}%`;
-    graficoColunaEmpreender.style.height = `${calcularInteiroPelaPorcentagem(usuario.salario, resultadoUsuario.empreender)}%`;
-    graficoColunaLazer.style.height = `${calcularInteiroPelaPorcentagem(usuario.salario, resultadoUsuario.lazer)}%`;
-    graficoColunaCompras.style.height = `${calcularInteiroPelaPorcentagem(usuario.salario, resultadoUsuario.compras)}%`;
+    graficoColunaCaixa.style.height = `${resultadoUsuario.caixa}%`;
+    graficoColunaInvestimento.style.height = `${resultadoUsuario.investimento}%`;
+    graficoColunaEmpreender.style.height = `${resultadoUsuario.empreender}%`;
+    graficoColunaLazer.style.height = `${resultadoUsuario.lazer}%`;
+    graficoColunaCompras.style.height = `${resultadoUsuario.compras}%`;
+
+    legendaGrafico.innerHTML = `<div>Despesas basicas<br>${calculaPorcentagem(usuario.salario, resultadoUsuario.despesasBasicas).toFixed(2)} R$</div><div>Finan / empré<br>${calculaPorcentagem(usuario.salario, resultadoUsuario.despesasExtras).toFixed(2)} R$</div><div>Caixa<br>${calculaPorcentagem(usuario.salario, resultadoUsuario.caixa).toFixed(2)} R$</div><div>Investir<br>${calculaPorcentagem(usuario.salario, resultadoUsuario.investimento).toFixed(2)} R$</div><div>Empreender<br>${calculaPorcentagem(usuario.salario, resultadoUsuario.empreender).toFixed(2)} R$</div><div>Lazer<br>${calculaPorcentagem(usuario.salario, resultadoUsuario.lazer).toFixed(2)} R$</div><div>Compras<br>${calculaPorcentagem(usuario.salario, resultadoUsuario.compras).toFixed(2)} R$</div>`;
+
 }
