@@ -1,3 +1,19 @@
+function calculaPorcentagem(valorInteiro, porcentagem){
+    return (valorInteiro * porcentagem) / 100;
+};
+
+function calcularInteiroPelaPorcentagem(valorInteiro, valorParte){
+    return parseInt((100 * valorParte) / valorInteiro);
+};
+
+
+
+
+
+
+
+
+
 function aceitarAlerta(){
     const alerta = document.querySelector("#alerta");
     const formulario = document.querySelector("main > form");
@@ -16,17 +32,6 @@ function aceitarAlerta(){
 
 
 
-let usuario = {
-    salario: 0,
-    despesasBasicas: 0,
-    despesasExtras: 0,
-    caixa: 0,
-    investimento: 0,
-    empreender: 0,
-    lazer: 0,
-    compras: 0
-}
-
 
 function gerarResultado(){
     function pararSubmitForm(event){
@@ -35,6 +40,21 @@ function gerarResultado(){
 
     const elementoForm = document.querySelector("main > form");
     elementoForm.addEventListener("submit", pararSubmitForm);
+
+
+
+
+
+    let usuario = {
+        salario: 0,
+        despesasBasicas: 0,
+        despesasExtras: 0,
+        caixa: 0,
+        investimento: 0,
+        empreender: 0,
+        lazer: 0,
+        compras: 0
+    }
 
 
 
@@ -263,7 +283,32 @@ function gerarResultado(){
    
 
 
-    const output = document.querySelector("main > form > output");
+    const salarioSobra = usuario.salario - (usuario.despesasBasicas + usuario.despesasExtras);
 
-    output.innerHTML = `${fraseResultado}`;
+    let resultadoUsuario = {
+        despesasBasicas: calcularInteiroPelaPorcentagem(usuario.salario, usuario.despesasBasicas),
+        despesasExtras: calcularInteiroPelaPorcentagem(usuario.salario, usuario.despesasExtras),
+        caixa: calculaPorcentagem(salarioSobra, usuario.caixa),
+        investimento: calculaPorcentagem(salarioSobra, usuario.investimento),
+        empreender: calculaPorcentagem(salarioSobra, usuario.empreender),
+        lazer: calculaPorcentagem(salarioSobra, usuario.lazer),
+        compras: calculaPorcentagem(salarioSobra, usuario.compras),
+    };
+
+
+    const graficoColunaDespesasBasicas = document.querySelector("#despesasBasicas");
+    const graficoColunaDespesasExtras = document.querySelector("#despesasBasicas");
+    const graficoColunaCaixa = document.querySelector("#caixa");
+    const graficoColunaInvestimento = document.querySelector("#investimento");
+    const graficoColunaEmpreender = document.querySelector("#empreender");
+    const graficoColunaLazer = document.querySelector("#lazer");
+    const graficoColunaCompras = document.querySelector("#compras");
+
+    graficoColunaDespesasBasicas.style.height = `${resultadoUsuario.despesasBasicas}%`;
+    graficoColunaDespesasExtras.style.height = `${resultadoUsuario.despesasExtras}%`;
+    graficoColunaCaixa.style.height = `${calcularInteiroPelaPorcentagem(usuario.salario, resultadoUsuario.caixa)}%`;
+    graficoColunaInvestimento.style.height = `${calcularInteiroPelaPorcentagem(usuario.salario, resultadoUsuario.investimento)}%`;
+    graficoColunaEmpreender.style.height = `${calcularInteiroPelaPorcentagem(usuario.salario, resultadoUsuario.empreender)}%`;
+    graficoColunaLazer.style.height = `${calcularInteiroPelaPorcentagem(usuario.salario, resultadoUsuario.lazer)}%`;
+    graficoColunaCompras.style.height = `${calcularInteiroPelaPorcentagem(usuario.salario, resultadoUsuario.compras)}%`;
 }
