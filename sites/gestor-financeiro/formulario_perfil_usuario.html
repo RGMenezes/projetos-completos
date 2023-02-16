@@ -49,7 +49,7 @@
                     <h2>Qual o seu salário atual?</h2>
 
                     <label for="salario">Salário:</label>
-                    <input type="number" name="salario" id="salario" required min="0" placeholder="Salário">
+                    <input type="number" name="salario" id="salario" min="0" placeholder="Salário">
 
 
                     <h2>Você tem alguma renda extra?</h2>
@@ -67,13 +67,13 @@
                     <h2>O quanto você gasta com</h2>
 
                     <label for="alimentacao">Alimentação e gás?</label>
-                    <input type="number" name="alimentacao" id="alimentacao" required min="0" placeholder="Alimentação"><br>
+                    <input type="number" name="alimentacao" id="alimentacao" min="0" placeholder="Alimentação"><br>
 
                     <label for="aluguel">Aluguel?</label>
-                    <input type="number" name="aluguel" id="aluguel" required min="0" placeholder="Aluguel"><br>
+                    <input type="number" name="aluguel" id="aluguel" min="0" placeholder="Aluguel"><br>
 
                     <label for="aguaLuzInternet">Água, luz e internet?</label>
-                    <input type="number" name="aguaLuzInternet" id="aguaLuzInternet" required min="0" placeholder="Á + L + I">
+                    <input type="number" name="aguaLuzInternet" id="aguaLuzInternet" min="0" placeholder="Á + L + I">
 
                 </section>
 
@@ -92,16 +92,16 @@
                     <h2>Se você possui um financiamento ou empréstimo, qual o valor e a duração?</h2>
 
                     <label for="financiamentoEmprestimoValor">Valor:</label>
-                    <input type="number" name="financiamentoEmprestimoValor" id="financiamentoEmprestimoValor" required min="0" placeholder="Valor"><br>
+                    <input type="number" name="financiamentoEmprestimoValor" id="financiamentoEmprestimoValor" min="0" placeholder="Valor"><br>
 
                     <label for="financiamentoEmprestimoDuracao">Duração:</label>
-                    <input type="number" name="financiamentoEmprestimoDuracao" id="financiamentoEmprestimoDuracao" required min="0" placeholder="Duração">
+                    <input type="number" name="financiamentoEmprestimoDuracao" id="financiamentoEmprestimoDuracao" min="0" placeholder="Duração">
 
                 </section>
 
             </fieldset>
 
-            <fieldset>
+            <fieldset id="perguntas2">
                 <legend>Mais algumas perguntas</legend>
 
                 <section>
@@ -150,7 +150,7 @@
                 </section>
             </fieldset>
 
-            <fieldset>
+            <fieldset id="perguntas3">
                 <legend>Definindo seu perfil</legend>
 
                 <section>
@@ -213,12 +213,9 @@
 
             </fieldset>
 
-            <button onclick="gerarResultado()">Avançar</button>
+            <button onclick="avancarForm('perguntas2')">Avançar</button>
 
             <output>
-                <section>
-                    
-                </section>
                 <section>
                     <h1>Divisão do salário</h1>
                     <div id="grafico">
@@ -233,6 +230,10 @@
 
                     <div id="legendaGrafico">
                     </div>
+                </section>
+
+                <section>
+                    
                 </section>
             </output>
         </form>

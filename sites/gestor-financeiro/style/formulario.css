@@ -48,8 +48,8 @@ header{
 }
 
 main > form{
-    /*display: none;
-    transform: scale(0);*/
+    display: none;
+    transform: scale(0);
 }
 
 main > form > fieldset{
@@ -57,6 +57,11 @@ main > form > fieldset{
     margin-bottom: 70px;
     border: none;
     color: var(--color5);
+}
+
+#perguntas2, #perguntas3{
+    display: none;
+    transform: scale(0);
 }
 
 main > form > fieldset > legend{
@@ -128,10 +133,11 @@ main > form button:active{
 
 main > form > output{
     padding: 15px;
-    display: block;
+    display: none;
     background-color: var(--color5);
     color: var(--color1);
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+    transform: scale(0);
 }
 
 main > form > output > section > h1{
@@ -153,6 +159,7 @@ main > form > output > section > div{
     align-items: end;
     justify-content: center;
     gap: 5px;
+    border-radius: 5px;
 }
 main > form > output > section > div > div{
     height: 1%;
@@ -161,10 +168,11 @@ main > form > output > section > div > div{
     text-align: center;
 }
 #grafico{
-    height: 150px;
+    height: 200px;
     background-color: var(--color1);
 }
 #grafico > div{
     background-color: var(--color3);
-    color: black;
+    border-radius: 2px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }

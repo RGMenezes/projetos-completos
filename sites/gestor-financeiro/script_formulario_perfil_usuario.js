@@ -23,14 +23,65 @@ function aceitarAlerta(){
     setTimeout(
         function(){
             alerta.style.display = "none";
-            formulario.setAttribute("style", "display: block; transform: scale(1);");
+            formulario.style.display = "block";
         },
         310
+    );
+
+    setTimeout(
+        function(){
+            formulario.style.transform = "scale(1)";
+        },
+        410
     );
 };
 
 
+function avancarForm(pergunta){
+    function pararSubmitForm(event){
+        event.preventDefault();
+    };
 
+    const elementoForm = document.querySelector("main > form");
+    elementoForm.addEventListener("submit", pararSubmitForm);
+
+
+
+
+
+    const perguntas2 = document.querySelector("#perguntas2");
+    const perguntas3 = document.querySelector("#perguntas3");
+
+    const button = document.querySelector("main > form > button");
+
+    if(pergunta == "perguntas2"){
+        perguntas2.style.display = "block";
+
+        setTimeout(
+            function(){
+                perguntas2.style.transform = "scale(1)";
+            },
+            10
+        );
+
+        button.setAttribute("onclick", "avancarForm('perguntas3')");
+
+    }else if(pergunta == "perguntas3"){
+        perguntas3.style.display = "block";
+
+        setTimeout(
+            function(){
+                perguntas3.style.transform = "scale(1)";
+            },
+            10
+        );
+
+        button.setAttribute("onclick", "gerarResultado()");
+        button.innerHTML = "Resultado";
+    }else{
+        alert("Erro avançar pergunta");
+    };
+};
 
 
 function gerarResultado(){
@@ -346,5 +397,20 @@ function gerarResultado(){
     graficoColunaCompras.style.height = `${resultadoUsuario.compras}%`;
 
     legendaGrafico.innerHTML = `<div>Despesas basicas<br>${calculaPorcentagem(usuario.salario, resultadoUsuario.despesasBasicas).toFixed(2)} R$</div><div>Finan / empré<br>${calculaPorcentagem(usuario.salario, resultadoUsuario.despesasExtras).toFixed(2)} R$</div><div>Caixa<br>${calculaPorcentagem(usuario.salario, resultadoUsuario.caixa).toFixed(2)} R$</div><div>Investir<br>${calculaPorcentagem(usuario.salario, resultadoUsuario.investimento).toFixed(2)} R$</div><div>Empreender<br>${calculaPorcentagem(usuario.salario, resultadoUsuario.empreender).toFixed(2)} R$</div><div>Lazer<br>${calculaPorcentagem(usuario.salario, resultadoUsuario.lazer).toFixed(2)} R$</div><div>Compras<br>${calculaPorcentagem(usuario.salario, resultadoUsuario.compras).toFixed(2)} R$</div>`;
+
+    const outputFrase = document.querySelector("main > form > output > section ~ section");
+
+    outputFrase.innerHTML = fraseResultado;
+
+
+    const output = document.querySelector("main > form > output");
+    output.style.display = "block";
+
+    setTimeout(
+        function(){
+            output.style.transform = "scale(1)";
+        },
+        10
+    );
 
 }
