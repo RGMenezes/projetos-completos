@@ -123,7 +123,8 @@ header{
     translate: -50%;
 }
 .menu-tools > a:active{
-    background-color: var(--color4);
+    background-color: var(--color2);
+    color: var(--color3);
     transition: all .1s ease;
 }
 .menu-tools > .button-calculadora{
@@ -190,6 +191,7 @@ main > section > p{
 }
 main > section > img{
     width: 100%;
+    border-radius: 10px;
 }
 
 

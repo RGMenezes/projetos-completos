@@ -48,6 +48,14 @@ function ativarMenu(){
         }, 310);
     };
 };
+function ativarMenuOtherScreen(){
+    const menuTools = document.querySelector(".menu-tools");
+
+    if(window.innerWidth > 769){
+        menuTools.style.bottom = "0px";
+    };
+
+};
 
 
 let numeroAtualCalculadora = '';

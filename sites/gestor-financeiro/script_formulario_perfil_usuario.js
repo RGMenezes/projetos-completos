@@ -7,13 +7,6 @@ function calcularInteiroPelaPorcentagem(valorInteiro, valorParte){
 };
 
 
-
-
-
-
-
-
-
 function aceitarAlerta(){
     const alerta = document.querySelector("#alerta");
     const formulario = document.querySelector("main > form");

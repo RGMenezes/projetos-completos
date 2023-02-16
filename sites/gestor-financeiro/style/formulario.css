@@ -37,15 +37,21 @@ header{
     background-color: red;
     font: 500 normal 1em var(--font-general);
     color: var(--color1);
-    border: none;
+    border: 1px solid red;
     border-radius: 10px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+#alerta button:hover{
+    background-color: rgb(255, 189, 163);
+    color: red;
 }
 #alerta button:active{
     background-color: var(--color1);
     color: red;
+    transform: scale(1.05);
     transition: all .1s ease;
 }
+
 
 main > form{
     display: none;
@@ -121,6 +127,9 @@ main > form button{
     border-radius: 10px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
+main > form button:hover{
+    background-color: var(--color4);
+}
 main > form button:active{
     background-color: var(--color2);
     color: var(--color3);
@@ -131,12 +140,15 @@ main > form button:active{
 
 
 
+
 main > form > output{
     padding: 15px;
+    padding-bottom: 30px;
     display: none;
     background-color: var(--color5);
     color: var(--color1);
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
     transform: scale(0);
 }
 
@@ -175,4 +187,10 @@ main > form > output > section > div > div{
     background-color: var(--color3);
     border-radius: 2px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (min-width: 769px) {
+    main > form > output > section > div > div{
+        font-size: .8em;
+    }
 }
